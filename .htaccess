@@ -1,56 +1,17 @@
 # allow from *
 AddDefaultCharset UTF-8
 
-# *********************************************************
-# *                 Embargo PW Protection                 *
-# *********************************************************
-# Password protect quickfacts for pre-release data
-#AuthUserFile /vs/www/access/embargo/htpasswd
-#AuthName "Restricted"
-#AuthType Basic
-#require user cnmpsecure
-# *********************************************************
-# *********************************************************
-
-# Custom PHP values
-<IfModule mod_php5.c>
-    php_value memory_limit 128M
-</IfModule>
-
-<IfModule mod_deflate.c>
-    # compress by mime type
-    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript text/javascript application/x-javascript font/woff2 font/woff
-</IfModule>
-
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresDefault "modification plus 3 months"
-</IfModule>
-
 <IfModule mod_include.c>
-    SSILastModified on
-    SSIETag on
-    FileETag -INode
+  SSILastModified on
+  SSIETag on
+  FileETag -INode
 </IfModule>
 
 
 # Rewrites
 <IfModule mod_rewrite.c>
-	RewriteEngine On
-
-	# Must be set to current file directory
-	RewriteBase /
-
-	# Store the current location in an environment variable CWD
-	RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
-	RewriteRule ^.*$ - [E=CWD:%2]
-
-	# Leave real files and directories alone!
-	RewriteRule ^index\.php$ - [L]
-	RewriteCond %{REQUEST_URI} !^assets
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d
-	# Redirect everything else
-	# RewriteRule . index.php [L]
-	RewriteRule ^.*$ %{ENV:CWD}index.php [QSA,L]
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
 </IfModule>
