@@ -12,7 +12,7 @@ Tools & Libraries
 * Google Cloud Services - Compute Engine: https://cloud.google.com/
 * HTTPS Everywhere - Server SSL Cert: https://www.eff.org/https-everywhere
 * Google Closuer Compiler for JS Compression: https://developers.google.com/closure/compiler
-* YUI Compressor for CSS Compression: https://yui.github.io/yuicompressor/
+* YUI Compressor for CSS & JS Module Compression: https://yui.github.io/yuicompressor/
 * Squoosh for image conversion into AVIF format: https://squoosh.app/
 * Apache Mod Rewrite for dynamic location directories: https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html
 * Created a Windows bat file to automate CSS & JS file compression after updates: [.gcc/compile.bat 
