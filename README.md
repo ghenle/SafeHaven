@@ -14,4 +14,5 @@ YUI Compressor for CSS Compression
 https://yui.github.io/yuicompressor/
 
 Created a Windows bat file to automate CSS & JS file compression after updates
-.gcc/compile.bat 
+[.gcc/compile.bat 
+](https://github.com/ghenle/SafeHaven/blob/main/.gcc/compile.bat)
