@@ -5,7 +5,7 @@ Time Log
 ---------------------------------------------------------------
 * 5/17 - Workspace Setup - 3hrs - YUI & GCC newer versions available. Needed a reinstall of JAVA on my laptop
 * 5/18 - Server Setup - 3hrs - Google Cloud LAMP Micro server. Debian GNU/Linux 11 (bullseye), Apache 2, PHP 8.1, MySQL 8.0
-* 5/18 - Page layout - 6hrs - CSS layout, SEO, Best Practices, Performance. Mobile 96,100,100,100. Desktop 99,100,100,100.
+* 5/18 - Page layout - 6hrs - CSS layout, SEO, Best Practices, Performance. Lighthouse Mobile 96,100,100,100. Desktop 99,100,100,100.
 
 Tools & Libraries
 ---------------------------------------------------------------
