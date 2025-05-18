@@ -8,6 +8,8 @@ Time Log
 
 Tools & Libraries
 ---------------------------------------------------------------
+* Google Cloud Services - Compute Engine
+* HTTPS Everywhere - Server SSL Cert: https://www.eff.org/https-everywhere
 * Google Closuer Compiler for JS Compression: https://developers.google.com/closure/compiler
 * YUI Compressor for CSS Compression: https://yui.github.io/yuicompressor/
 * Apache Mod Rewrite for dynamic location directories: https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html
