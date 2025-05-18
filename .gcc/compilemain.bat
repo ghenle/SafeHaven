@@ -1,0 +1,1 @@
+java -jar closure-compiler-v20250407.jar --js ../js/main.js --create_source_map ../js/main.min.js.map --dynamic_import_alias=import_ --source_map_format=V3 --js_output_file ../js/main.min.js

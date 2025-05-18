@@ -7,6 +7,18 @@ AddDefaultCharset UTF-8
   FileETag -INode
 </IfModule>
 
+<IfModule mod_headers.c>
+  # WEEK
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg)$">
+    Header set Cache-Control "max-age=604800, public"
+  </FilesMatch>
+
+  # WEEK
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "max-age=604800"
+  </FilesMatch>
+</IfModule>
+
 
 # Rewrites
 <IfModule mod_rewrite.c>

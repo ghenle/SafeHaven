@@ -9,7 +9,7 @@ del "..\js\*.min.js.map" /S /Q
 :: WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.google.javascript.jscomp.jarjar.com.google.protobuf.UnsafeUtil$MemoryAccessor (file:/C:/Users/ghenl/Desktop/SafeHaven/gcc/closure-compiler-v20250407.jar)
 :: WARNING: Please consider reporting this to the maintainers of class com.google.javascript.jscomp.jarjar.com.google.protobuf.UnsafeUtil$MemoryAccessor
 :: WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
-forfiles /p "..\js" /m *.js /c "cmd /c java -jar %~dp0\closure-compiler-v20250407.jar --js @file --create_source_map @fname.min.js.map --source_map_format=V3 --js_output_file @fname.min.js"
+:: forfiles /p "..\js" /m *.js /c "cmd /c java -jar %~dp0\closure-compiler-v20250407.jar --js @file --create_source_map @fname.min.js.map --dynamic_import_alias=import_ --source_map_format=V3 --js_output_file @fname.min.js"
 
 
 :: https://github.com/yui/yuicompressor/releases
