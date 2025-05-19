@@ -39,7 +39,6 @@ header {
 h1,
 h2 {
   margin: 0 0.5rem;
-  text-align: center;
 }
 h1 {
   font-size: clamp(2rem, 4vw, 2.5rem);
@@ -48,20 +47,36 @@ h2,
 h2 > * {
   font-size: clamp(1.4rem, 4vw, 1.75rem);
 }
-#contact > form {
-  padding-top: 2vh;
+input:not([type="radio"]) {
+  border:2px solid #C00;
 }
+
 #hero {
   line-height: 15vh;
+  background: center / cover no-repeat url(/img/hero25.avif);
+}
+#call {
+  margin: 0 1.5rem;
+  
+  h3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+#contact > form {
+  padding-top: 2vh;
+  margin: 0 1.5rem;
+  width: calc(100% - 3rem);
+  max-width: 610px;
 }
 .cta {
   display: block;
-  color: #000;
-  background: #43B02A;
   padding: 0.5rem 2rem;
   font-weight: bold;
   font-size: 2rem;
   width: 100%;
+  max-width: 610px;
   border: 1px solid #000;
-  text-decoration: none;
+  align-self: center;
 }
