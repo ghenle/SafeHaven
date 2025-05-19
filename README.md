@@ -29,33 +29,33 @@ Captured info on form submit
 ```php
 Array
 (
-    [name] => John & Jane Doe
-    [email] => user@example.com
-    [phone] => 1234567890
-    [zip] => 12345-1234
-    [preferred] => email
-    [utm_source] => valpak
+    [name] => "John & Jane Doe"
+    [email] => "user@example.com"
+    [phone] => "1234567890"
+    [zip] => "12345-1234"
+    [preferred] => "email"
+    [utm_source] => "valpak"
     [utm_medium] => 
     [utm_campaign] => 
     [utm_term] => 
     [utm_content] => 
-    [service_area] => /CharlotteNC
-    [in_service_area] => NO
+    [service_area] => "/CharlotteNC"
+    [in_service_area] => "NO"
 )
 
 Array
 (
-    [name] => John & Jane Doe
-    [email] => user@example.com
-    [phone] => 123-456-7890
-    [zip] => 12345
-    [preferred] => email
-    [utm_source] => valpak
+    [name] => "John & Jane Doe"
+    [email] => "user@example.com"
+    [phone] => "123-456-7890"
+    [zip] => "12345"
+    [preferred] => "email"
+    [utm_source] => "valpak"
     [utm_medium] => 
     [utm_campaign] => 
     [utm_term] => 
     [utm_content] => 
-    [service_area] => /CharlotteNC
-    [in_service_area] => YES
+    [service_area] => "/CharlotteNC"
+    [in_service_area] => "YES"
 )
 ```
