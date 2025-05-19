@@ -5,17 +5,43 @@ document.addEventListener('DOMContentLoaded', (e) => {
   const pathArray  = path.substring(1).split('/');
   const paramArray = new URLSearchParams(window.location.search);
 
+  const allInputs     = document.querySelectorAll('#contact > form input:not([type="radio"])');
   const userInputs    = document.querySelectorAll('input:not([type="radio"]):not([type="hidden"])');
   const urchinInputs  = document.querySelectorAll('input[name^="utm_"]');
   const serviceArea   = document.querySelector('input[name="service_area"]');
   const inServiceArea = document.querySelector('input[name="in_service_area"]');
   const locationName  = document.querySelector('#call > h2 > span');
   const locationPhone = document.querySelector('#call > h3 > a');
-  const myForm        = document.querySelector("#contact > form");
+  const myForm        = document.querySelector('#contact > form');
   const myFormButton  = document.querySelector('#contact > form > button');
   const customerZip   = document.querySelector("#zip");
   
   let locationInfo = false;
+
+  const populateInputs = ()=>{
+    let local   = path;
+    let inLocal = 'UNKNOWN - location incorrect';
+
+    if ( locationInfo ) {
+      const zip = customerZip.value.match(/^\d{5}/);
+
+      local = locationInfo.location;
+
+      if ( zip ) {
+        inLocal = (locationInfo.serviceZips.indexOf(zip[0]) !== -1)
+          ? 'YES'
+          : 'NO';
+      } else {
+        inLocal = "UNKNOWN - zip code incorrect"
+      }
+    }
+
+    serviceArea.value   = path;
+    inServiceArea.value = inLocal;
+
+    console.log(serviceArea.value);
+    console.log(inServiceArea.value);
+  };
 
   console.log(pathArray);
 
@@ -46,33 +72,31 @@ document.addEventListener('DOMContentLoaded', (e) => {
   myFormButton.addEventListener('click', (e) => {
     e.preventDefault();
     
-    let local   = path;
-    let inLocal = 'UNKNOWN - location incorrect';
-
-    if ( locationInfo ) {
-      const zip = customerZip.value.match(/^\d{5}/);
-
-      local = locationInfo.location;
-
-      if ( zip ) {
-        inLocal = (locationInfo.serviceZips.indexOf(zip[0]) !== -1)
-          ? 'YES'
-          : 'NO';
-      } else {
-        inLocal = "UNKNOWN - zip code incorrect"
-      }
-    }
-
-    serviceArea.value   = path;
-    inServiceArea.value = inLocal
-
-
-    console.log(serviceArea.value);
-    console.log(inServiceArea.value);
-
+    populateInputs();
     // Trigger the form submission
     myForm.submit();
   });
+  /**
+   * capture the phone link click.
+   **/
+  locationPhone.addEventListener('click', (e) => {
+    const formData = new FormData();
+
+    formData.append('phone', e.target.getAttribute('href'));
+
+    populateInputs();
+
+    allInputs.forEach((e)=>{
+      let name = e.getAttribute('name');
+      formData.append(name, e.value);
+    });
+
+    fetch('/api/lead', {
+      method: 'POST',
+      body: formData
+    });
+  });
+
 
   /**
    * Set UTM (Urchin Tracking Module) parameters
