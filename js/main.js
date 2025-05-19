@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   locationPhone.addEventListener('click', (e) => {
     const formData = new FormData();
 
-    formData.append('phone', e.target.getAttribute('href'));
+    formData.append('branchPhone', e.target.getAttribute('href'));
 
     populateInputs();
 
