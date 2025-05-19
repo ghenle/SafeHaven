@@ -1,7 +1,6 @@
 {
   "CharlotteNC":{
     "location": "Charlotte, NC",
-    "mapCenter": "40.749933,-73.98633",
     "phone": "123-456-7890",
     "serviceZips": [
       "28078",
@@ -18,7 +17,6 @@
   },
   "WinstonSalemNC":{
     "location": "Winston-Salem, NC",
-    "mapCenter": "36.1076686,-80.408777",
     "phone": "012-345-6789",
     "serviceZips": [
       "27101",

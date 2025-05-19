@@ -10,6 +10,9 @@ h2 {
 #call > h3 {
   text-align: center;
 }
+#contact > form div.gps > button {
+  background: center / cover no-repeat url(/img/gps-location.svg);
+}
 
 #contact > form {
   display: flex;
@@ -24,7 +27,7 @@ h2 {
     gap: 0.5rem;
   }
 
-  div:nth-child(-n+4) {
+  > div:nth-child(-n+4) {
     > *:nth-child(odd) {
       justify-self: end;
     }
@@ -34,7 +37,7 @@ h2 {
     }
   }
   
-  div:nth-child(5) {
+  > div:nth-child(5) {
     gap: 1.0rem;
     input {
       justify-self: end;

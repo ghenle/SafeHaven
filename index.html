@@ -18,7 +18,7 @@
     <script type="module" src="/js/main.min.js"></script>
   </head>
   <body>
-    <section id="hero">&nbsp;</section>
+    <div id="hero">&nbsp;</div>
     <header>
       <img src="/img/logo.svg" alt="SafeHaven Logo" title="Logo Placeholder"><h1>SafeHaven</h1>
     </header>
@@ -48,7 +48,10 @@
         </div>
         <div>
           <label for="zip">ZIP Code: </label>
-          <input type="text"id="zip"  name="zip" placeholder="12345 or 12345-6789" pattern="(\d{5})(-\d{4})?" autocomplete="postal-code" required aria-required="true" aria-describedby="zip-hint">
+          <div class="gps">
+            <input type="text" id="zip"  name="zip" placeholder="12345 or 12345-6789" pattern="(\d{5})(-\d{4})?" autocomplete="postal-code" required aria-required="true" aria-describedby="zip-hint">
+            <button type="button" aria-label="Get my ZIP Code"></button>
+          </div>
           <div class="require">(required)</div>
           <div class="hint" id="zip-hint">Enter your 5 or 9-digit ZIP Code.</div>
         </div>

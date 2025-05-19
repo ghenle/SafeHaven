@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   const locationPhone = document.querySelector('#call > h3 > a');
   const myForm        = document.querySelector('#contact > form');
   const myFormButton  = document.querySelector('#contact > form > button');
+  const myGPSButton   = document.querySelector("#contact > form div.gps > button")
   const customerZip   = document.querySelector("#zip");
   
   let locationInfo = false;
@@ -77,6 +78,40 @@ document.addEventListener('DOMContentLoaded', (e) => {
     myForm.submit();
   });
   /**
+   * Autofill the ZIP Code.
+   * Google Geocoding API
+   **/
+  myGPSButton.addEventListener('click', (e) => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      config.google.query.latlng =  `${position.coords.latitude},${position.coords.longitude}`;
+
+      const params = new URLSearchParams(config.google.query).toString();
+      const url    = `${config.google.url}?${params}`;
+      
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          // For clarity. The address_components array in the results
+          const address = data.results[0].address_components;
+
+          // Find the postal code (zip code)
+          const postalCode = address.find(component => component.types.includes('postal_code')).long_name;
+
+          // prefill the ZIP
+          customerZip.style.borderColor = config.color.good;
+          customerZip.value = postalCode;
+
+          // Use the postal code as needed
+          console.log(`[XHR] geolocation data: ${postalCode}`);
+        }).catch((error) => {
+          console.error(error);
+          console.log(new Error().stack);
+        });
+  });
+
+
+  });
+  /**
    * capture the phone link click.
    **/
   locationPhone.addEventListener('click', (e) => {
@@ -135,34 +170,4 @@ document.addEventListener('DOMContentLoaded', (e) => {
       console.error(error);
       console.log(new Error().stack);
     });
-
-  /**
-   * Google Geocoding API
-   **/
-  navigator.geolocation.getCurrentPosition((position) => {
-    config.google.query.latlng =  `${position.coords.latitude},${position.coords.longitude}`;
-
-    const params = new URLSearchParams(config.google.query).toString();
-    const url    = `${config.google.url}?${params}`;
-    
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        // For clarity. The address_components array in the results
-        const address = data.results[0].address_components;
-
-        // Find the postal code (zip code)
-        const postalCode = address.find(component => component.types.includes('postal_code')).long_name;
-
-        // prefill the ZIP
-        customerZip.style.borderColor = config.color.good;
-        customerZip.value = postalCode;
-
-        // Use the postal code as needed
-        console.log(`[XHR] geolocation data: ${postalCode}`);
-      }).catch((error) => {
-        console.error(error);
-        console.log(new Error().stack);
-      });
-  });
 });
