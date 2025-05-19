@@ -22,7 +22,7 @@ Tools & Libraries
 Google Geolocation Services API
 -----
 Geolocation services are used to get the user's location and fill the form with the associated ZIP Code. The original plan was to use the location to redirect the customer to the nearest service area. I simplified prefilling the form for several reasons.
-* A customer lead is a customer lead, and given more options and distractions, it is an opportunity to second-guess.
+* A customer lead is a customer lead, and given more options and distractions, it is an opportunity to second-guess, reconsider, and not click.
 * It would distort marketing analytics.
 * Loading the Geolocation API was slowing the page Loading
 * The potential customer may be traveling and not at the location where they want service.
