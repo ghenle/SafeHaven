@@ -23,6 +23,11 @@ Lighthouse Testing
 -----
 Lighthouse applies a slowdown to the CPU to simulate a mid-tier mobile phone performance and a slow 4G network. This is seen when loading the hero image (LCP) at the top of the page. Typical desktop 360 ms, mobile 1,520 ms.
 
+In Chrome, you can calibrate the throttling presets:
+1. Open the Lighthouse panel in Chrome DevTools.
+2. Click the gear icon (settings) in the top right corner of the Lighthouse panel.
+3. Find the "Throttling" section.
+4. Click the Calibrate/Recalibrate button
 
 Google Geolocation Services API
 -----
