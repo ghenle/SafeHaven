@@ -43,8 +43,9 @@ Demo URLs
 * https://www.bad.fyi/CharlotteNC?utm_source=valpak
 * https://www.bad.fyi/WinstonSalemNC
 
-Captured info on form submit
+Captured Info
 -----
+Form submit
 ```php
 Array
 (
@@ -61,9 +62,12 @@ Array
     [service_area] => "/CharlotteNC"
     [in_service_area] => "NO"
 )
-
+```
+CALL NOW! Button
+```php
 Array
 (
+    [branchPhone] => "123-456-7890"
     [name] => "John & Jane Doe"
     [email] => "user@example.com"
     [phone] => "123-456-7890"
