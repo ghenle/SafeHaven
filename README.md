@@ -21,7 +21,8 @@ Tools & Libraries
 
 Lighthouse Testing
 -----
-Lighthouse applies a 4x slowdown to the CPU to simulate a mid-tier mobile phone performance. This is seen when loading the hero image (LCP) at the top of the page. Typical desktop 360 ms, mobile 1,520 ms.
+Lighthouse applies a slowdown to the CPU to simulate a mid-tier mobile phone performance and a slow 4G network. This is seen when loading the hero image (LCP) at the top of the page. Typical desktop 360 ms, mobile 1,520 ms.
+
 
 Google Geolocation Services API
 -----
