@@ -10,7 +10,7 @@ let config = {
     url: 'https://maps.googleapis.com/maps/api/geocode/json',
     query: {
       latlng: null,
-      key: 'AIzaSyBXE7zPn59KNoPnLVbkLiTYpOaRlfzZOzY'
+      key: ${{ secrets.GOOGLE_API_KEY }}
     }
   }
 }
