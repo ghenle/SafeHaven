@@ -19,6 +19,10 @@ Tools & Libraries
 * Created a Windows bat file to automate CSS & JS file compression after updates: [.gcc/compile.bat 
 ](https://github.com/ghenle/SafeHaven/blob/main/.gcc/compile.bat)
 
+Lighthouse Testing
+-----
+Lighthouse applies a 4x slowdown to the CPU to simulate a mid-tier mobile phone performance. This is seen when loading the hero image (LCP) at the top of the page. Desktop 360 ms, Mobile 1,520 ms.  
+
 Google Geolocation Services API
 -----
 Geolocation services are used to get the user's location and fill the form with the associated ZIP Code. The original plan was to use the location to redirect the customer to the nearest service area. I simplified prefilling the form for several reasons.
